@@ -1,0 +1,29 @@
+#创建堆，优先队列处理
+import heapq
+
+#将序列转换成堆,并且将原列表数据根据堆的排序方法进行排序，第一个总是最小的并且，i的元素总是大于i//2，这是堆特征
+heap = heapq.heapify([1,2,3,])
+
+#将n插入到队中，堆会自动分配位置，来满足堆特征
+heappush(heap,n) 
+
+#将堆中最小的值弹出，也就是第一个值
+heappop(heap)
+
+
+#双端队列和列表相似,可以在序列的两端进行操作，并不会对数据进行去重
+from collections import deque
+
+d = deque([1,2,3,4])
+d.append(5)
+d.appendleft(0)
+
+d.extend([1,2])
+d.extendleft([7,8])
+
+d.pop()
+d.popleft()
+
+#双端队列还可以对数据进行偏移
+#当n为正数时，向右偏移，负数时，向左偏移
+d.rotate(n)  
